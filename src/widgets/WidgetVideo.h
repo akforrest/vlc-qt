@@ -27,8 +27,8 @@
     #include <QtGui/QFrame>
 #endif
 
-#include <core/Enums.h>
-#include <core/VideoDelegate.h>
+#include <VLCQtCore/Enums.h>
+#include <VLCQtCore/VideoDelegate.h>
 
 #include "SharedExportWidgets.h"
 

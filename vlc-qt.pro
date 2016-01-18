@@ -10,3 +10,5 @@ SUBDIRS +=  src/core \
             src/widgets
 
 CONFIG += ordered
+
+

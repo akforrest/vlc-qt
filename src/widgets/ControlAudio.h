@@ -22,7 +22,7 @@
 #include <QtCore/QList>
 #include <QtCore/QMap>
 
-#include <core/Enums.h>
+#include <VLCQtCore/Enums.h>
 
 #include "SharedExportWidgets.h"
 

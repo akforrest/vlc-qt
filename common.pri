@@ -24,7 +24,7 @@ else {
     BUILD_MODE = release
 }
 
-DESTDIR = $$PWD/../vlc-qt-build/
+DESTDIR = $$PWD/../vlc-qt-build
 LIBS += -L$${DESTDIR}
 
 INCLUDEPATH += $${VLC_QT_ROOT}/src
@@ -40,3 +40,18 @@ INCLUDEPATH += $${VLC_ROOT_PATH}/sdk/include
 INCLUDEPATH += $${VLC_ROOT_PATH}/sdk/include/vlc/plugins
 LIBS += -L$${VLC_ROOT_PATH}
 LIBS += -llibvlc -llibvlccore
+
+win32 {
+    CONFIG(debug, debug|release) {
+        TARGET = $${TARGET}d
+    }
+}
+
+# HEADERS
+header_files.files = $$HEADERS
+header_files.path = $${DESTDIR}/include/$${TARGET}
+INSTALLS += header_files
+
+INCLUDEPATH += $${DESTDIR}/include
+
+

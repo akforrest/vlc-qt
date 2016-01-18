@@ -6,13 +6,21 @@
 
 VLC_QT_TARGET_LIB = widgets
 
+TARGET = VLCQtWidgets
+
+HEADERS +=  ControlAudio.h \
+            ControlVideo.h \
+            SharedExportWidgets.h \
+            WidgetSeek.h \
+            WidgetSeekProgress.h \
+            WidgetVideo.h \
+            WidgetVolumeSlider.h
+
 ! include( ../../common.pri ) {
     error( "Couldn't find the common.pri file!" )
 }
 
 QT       += widgets gui
-
-TARGET = vlc-qt-$${VLC_QT_TARGET_LIB}
 
 DEFINES += VLCQT_WIDGETS_LIBRARY
 
@@ -23,12 +31,4 @@ SOURCES +=  ControlAudio.cpp \
             WidgetVideo.cpp \
             WidgetVolumeSlider.cpp
 
-HEADERS +=  ControlAudio.h \
-            ControlVideo.h \
-            SharedExportWidgets.h \
-            WidgetSeek.h \
-            WidgetSeekProgress.h \
-            WidgetVideo.h \
-            WidgetVolumeSlider.h
-
-LIBS += -lvlc-qt-core
+LIBS += -lVLCQtCore

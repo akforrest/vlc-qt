@@ -6,29 +6,7 @@
 
 VLC_QT_TARGET_LIB = core
 
-! include( ../../common.pri ) {
-    error( "Couldn't find the common.pri file!" )
-}
-
-TARGET = vlc-qt-$${VLC_QT_TARGET_LIB}
-
-DEFINES += VLCQT_CORE_LIBRARY
-
-SOURCES +=  Audio.cpp \
-            Common.cpp \
-            Enums.cpp \
-            Equalizer.cpp \
-            Error.cpp \
-            Instance.cpp \
-            Media.cpp \
-            MediaList.cpp \
-            MediaListPlayer.cpp \
-            MediaPlayer.cpp \
-            MetaManager.cpp \
-            ModuleDescription.cpp \
-            Video.cpp \
-            VideoMemoryStream.cpp \
-            VideoFrame.cpp
+TARGET = VLCQtCore
 
 HEADERS +=  Audio.h \
             Common.h \
@@ -48,3 +26,26 @@ HEADERS +=  Audio.h \
             VideoDelegate.h \
             VideoFrame.h \
             VideoMemoryStream.h
+
+! include( ../../common.pri ) {
+    error( "Couldn't find the common.pri file!" )
+}
+
+DEFINES += VLCQT_CORE_LIBRARY
+
+SOURCES +=  Audio.cpp \
+            Common.cpp \
+            Enums.cpp \
+            Equalizer.cpp \
+            Error.cpp \
+            Instance.cpp \
+            Media.cpp \
+            MediaList.cpp \
+            MediaListPlayer.cpp \
+            MediaPlayer.cpp \
+            MetaManager.cpp \
+            ModuleDescription.cpp \
+            Video.cpp \
+            VideoMemoryStream.cpp \
+            VideoFrame.cpp
+
