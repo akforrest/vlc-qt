@@ -25,7 +25,6 @@
 
 #include <QtGui/qwindowdefs.h>
 
-#include "Config.h"
 #include "Enums.h"
 #include "SharedExportCore.h"
 

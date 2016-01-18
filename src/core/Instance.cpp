@@ -21,7 +21,6 @@
 
 #include <vlc/vlc.h>
 
-#include "Config.h"
 #include "core/Enums.h"
 #include "core/Error.h"
 #include "core/Instance.h"

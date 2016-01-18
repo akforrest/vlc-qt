@@ -19,6 +19,8 @@
 #ifndef VLCQT_WIDGETSEEK_H_
 #define VLCQT_WIDGETSEEK_H_
 
+#include <QtGlobal>
+
 #if QT_VERSION >= 0x050000
     #include <QtWidgets/QWidget>
 #else

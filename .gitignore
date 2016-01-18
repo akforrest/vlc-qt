@@ -19,3 +19,5 @@ examples/demo-player/src/Makefile
 examples/demo-player/src/*.o
 examples/demo-player/src/moc_*
 examples/demo-player/src/ui_*
+
+_generated/
