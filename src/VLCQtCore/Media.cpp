@@ -21,10 +21,10 @@
 
 #include <vlc/vlc.h>
 
-#include "core/Error.h"
-#include "core/Instance.h"
-#include "core/Media.h"
-#include "core/Stats.h"
+#include "VLCQtCore/Error.h"
+#include "VLCQtCore/Instance.h"
+#include "VLCQtCore/Media.h"
+#include "VLCQtCore/Stats.h"
 
 VlcMedia::VlcMedia(const QString &location,
                    bool localFile,

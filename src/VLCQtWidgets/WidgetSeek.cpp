@@ -33,10 +33,10 @@
     #include <QtGui/QProgressBar>
 #endif
 
-#include "core/Error.h"
-#include "core/MediaPlayer.h"
+#include "VLCQtCore/Error.h"
+#include "VLCQtCore/MediaPlayer.h"
 
-#include "widgets/WidgetSeek.h"
+#include "VLCQtWidgets/WidgetSeek.h"
 
 VlcWidgetSeek::VlcWidgetSeek(VlcMediaPlayer *player,
                              QWidget *slider,

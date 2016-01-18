@@ -6,8 +6,8 @@
 
 TEMPLATE = subdirs
 
-SUBDIRS +=  src/core \
-            src/widgets
+SUBDIRS +=  src/VLCQtCore \
+            src/VLCQtWidgets
 
 CONFIG += ordered
 

@@ -24,10 +24,10 @@
     #include <QtGui/QAction>
 #endif
 
-#include "core/Audio.h"
-#include "core/MediaPlayer.h"
+#include "VLCQtCore/Audio.h"
+#include "VLCQtCore/MediaPlayer.h"
 
-#include "widgets/ControlAudio.h"
+#include "VLCQtWidgets/ControlAudio.h"
 
 VlcControlAudio::VlcControlAudio(VlcMediaPlayer *player,
                                  const QString &language,

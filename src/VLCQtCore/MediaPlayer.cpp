@@ -18,16 +18,16 @@
 
 #include <vlc/vlc.h>
 
-#include "core/Audio.h"
-#include "core/Error.h"
-#include "core/Instance.h"
-#include "core/Media.h"
-#include "core/MediaPlayer.h"
-#include "core/Video.h"
-#include "core/VideoDelegate.h"
+#include "VLCQtCore/Audio.h"
+#include "VLCQtCore/Error.h"
+#include "VLCQtCore/Instance.h"
+#include "VLCQtCore/Media.h"
+#include "VLCQtCore/MediaPlayer.h"
+#include "VLCQtCore/Video.h"
+#include "VLCQtCore/VideoDelegate.h"
 
 #if LIBVLC_VERSION >= 0x020200
-#include "core/Equalizer.h"
+#include "VLCQtCore/Equalizer.h"
 #endif
 
 VlcMediaPlayer::VlcMediaPlayer(VlcInstance *instance)

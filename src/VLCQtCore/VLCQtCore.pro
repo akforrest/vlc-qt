@@ -6,7 +6,7 @@
 
 VLC_QT_TARGET_LIB = core
 
-TARGET = VLCQtCore
+LIBNAME = VLCQtCore
 
 HEADERS +=  Audio.h \
             Common.h \

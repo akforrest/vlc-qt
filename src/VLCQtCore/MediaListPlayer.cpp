@@ -20,11 +20,11 @@
 
 #include <vlc/vlc.h>
 
-#include "core/Error.h"
-#include "core/Instance.h"
-#include "core/MediaList.h"
-#include "core/MediaListPlayer.h"
-#include "core/MediaPlayer.h"
+#include "VLCQtCore/Error.h"
+#include "VLCQtCore/Instance.h"
+#include "VLCQtCore/MediaList.h"
+#include "VLCQtCore/MediaListPlayer.h"
+#include "VLCQtCore/MediaPlayer.h"
 
 VlcMediaListPlayer::VlcMediaListPlayer(VlcInstance *instance)
     : QObject(instance),

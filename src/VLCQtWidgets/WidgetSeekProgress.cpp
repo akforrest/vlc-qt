@@ -25,10 +25,10 @@
     #include <QtGui/QProgressBar>
 #endif
 
-#include "core/Error.h"
-#include "core/MediaPlayer.h"
+#include "VLCQtCore/Error.h"
+#include "VLCQtCore/MediaPlayer.h"
 
-#include "widgets/WidgetSeekProgress.h"
+#include "VLCQtWidgets/WidgetSeekProgress.h"
 
 VlcWidgetSeekProgress::VlcWidgetSeekProgress(VlcMediaPlayer *player,
                              QWidget *parent)

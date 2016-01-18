@@ -30,9 +30,9 @@
 #include <vlc/plugins/vlc_common.h>
 #include <vlc/plugins/vlc_variables.h>
 
-#include "core/Audio.h"
-#include "core/Error.h"
-#include "core/MediaPlayer.h"
+#include "VLCQtCore/Audio.h"
+#include "VLCQtCore/Error.h"
+#include "VLCQtCore/MediaPlayer.h"
 
 /*!
     \private

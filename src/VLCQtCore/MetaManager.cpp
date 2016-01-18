@@ -18,8 +18,8 @@
 
 #include <vlc/vlc.h>
 
-#include "core/Media.h"
-#include "core/MetaManager.h"
+#include "VLCQtCore/Media.h"
+#include "VLCQtCore/MetaManager.h"
 
 VlcMetaManager::VlcMetaManager(VlcMedia *media)
     : _media(media)

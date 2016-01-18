@@ -41,6 +41,7 @@ INCLUDEPATH += $${VLC_ROOT_PATH}/sdk/include/vlc/plugins
 LIBS += -L$${VLC_ROOT_PATH}
 LIBS += -llibvlc -llibvlccore
 
+TARGET = $${LIBNAME}
 win32 {
     CONFIG(debug, debug|release) {
         TARGET = $${TARGET}d
@@ -49,9 +50,7 @@ win32 {
 
 # HEADERS
 header_files.files = $$HEADERS
-header_files.path = $${DESTDIR}/include/$${TARGET}
+header_files.path = $${DESTDIR}/include/$${LIBNAME}
 INSTALLS += header_files
-
-INCLUDEPATH += $${DESTDIR}/include
 
 

@@ -16,7 +16,7 @@
 * along with this library. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Enums.h"
+#include "VLCQtCore//Enums.h"
 
 Vlc::Vlc(QObject *parent)
     : QObject(parent) { }

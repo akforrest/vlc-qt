@@ -21,10 +21,10 @@
 
 #include <vlc/vlc.h>
 
-#include "core/Enums.h"
-#include "core/Error.h"
-#include "core/Instance.h"
-#include "core/ModuleDescription.h"
+#include "VLCQtCore/Enums.h"
+#include "VLCQtCore/Error.h"
+#include "VLCQtCore/Instance.h"
+#include "VLCQtCore/ModuleDescription.h"
 
 VlcInstance::VlcInstance(const QStringList &args,
                          QObject *parent)

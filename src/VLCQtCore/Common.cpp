@@ -1,9 +1,6 @@
 /****************************************************************************
 * VLC-Qt - Qt and libvlc connector library
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
-*
-* Based on Phonon multimedia library
-* Copyright (C) 2012 Harald Sitter <sitter@kde.org>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This library is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as published
@@ -19,15 +16,31 @@
 * along with this library. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/VideoFrame.h"
+#include "VLCQtCore/Common.h"
 
-VlcVideoFrame::VlcVideoFrame()
-    : inited(false), width(0), height(0)
+QStringList VlcCommon::args()
 {
-    for (int i = 0; i < 4; ++i) {
-        pitch[i] = 0;
-        visiblePitch[i] = 0;
-        lines[i] = 0;
-        visibleLines[i] = 0;
+    QStringList args;
+
+    args << "--intf=dummy"
+         << "--no-media-library"
+         << "--no-stats"
+         << "--no-osd"
+         << "--no-loop"
+         << "--no-video-title-show"
+#if defined(Q_OS_DARWIN)
+         << "--vout=macosx"
+#endif
+         << "--drop-late-frames";
+
+    return args;
+}
+
+bool VlcCommon::setPluginPath(const QString &path)
+{
+    if (qgetenv("VLC_PLUGIN_PATH").isEmpty()) {
+        return qputenv("VLC_PLUGIN_PATH", path.toLocal8Bit());
     }
+
+    return false;
 }

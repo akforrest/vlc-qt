@@ -21,8 +21,8 @@
 
 #include <vlc/vlc.h>
 
-#include "core/MediaPlayer.h"
-#include "core/VideoMemoryStream.h"
+#include "VLCQtCore/MediaPlayer.h"
+#include "VLCQtCore/VideoMemoryStream.h"
 
 static inline VlcVideoMemoryStream *p_this(void *opaque) { return static_cast<VlcVideoMemoryStream *>(opaque); }
 static inline VlcVideoMemoryStream *p_this(void **opaque) { return static_cast<VlcVideoMemoryStream *>(*opaque); }

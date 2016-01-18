@@ -19,9 +19,9 @@
 #include <cmath>
 #include <vlc/vlc.h>
 
-#include "core/Equalizer.h"
-#include "core/Error.h"
-#include "core/MediaPlayer.h"
+#include "VLCQtCore/Equalizer.h"
+#include "VLCQtCore/Error.h"
+#include "VLCQtCore/MediaPlayer.h"
 
 VlcEqualizer::VlcEqualizer(VlcMediaPlayer *vlcMediaPlayer)
     : QObject(vlcMediaPlayer),

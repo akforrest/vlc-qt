@@ -16,31 +16,33 @@
 * along with this library. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Common.h"
+#include <QtCore/QDebug>
+#include <vlc/vlc.h>
 
-QStringList VlcCommon::args()
+#include "VLCQtCore/Error.h"
+
+QString VlcError::errmsg()
 {
-    QStringList args;
-
-    args << "--intf=dummy"
-         << "--no-media-library"
-         << "--no-stats"
-         << "--no-osd"
-         << "--no-loop"
-         << "--no-video-title-show"
-#if defined(Q_OS_DARWIN)
-         << "--vout=macosx"
-#endif
-         << "--drop-late-frames";
-
-    return args;
-}
-
-bool VlcCommon::setPluginPath(const QString &path)
-{
-    if (qgetenv("VLC_PLUGIN_PATH").isEmpty()) {
-        return qputenv("VLC_PLUGIN_PATH", path.toLocal8Bit());
+    QString error;
+    if(libvlc_errmsg()) {
+        error = QString::fromUtf8(libvlc_errmsg());
+        clearerr();
     }
 
-    return false;
+    return error;
+}
+
+void VlcError::showErrmsg()
+{
+	// Outputs libvlc error message if there is any
+    QString error = errmsg();
+    if(!error.isEmpty()) {
+        qDebug() << "libvlc" << "Error:" << error;
+	}
+}
+
+void VlcError::clearerr()
+{
+	// Clears libvlc error message
+	libvlc_clearerr();
 }

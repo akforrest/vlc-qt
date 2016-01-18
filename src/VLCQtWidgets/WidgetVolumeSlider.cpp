@@ -29,10 +29,11 @@
     #include <QtGui/QSlider>
 #endif
 
-#include "core/Audio.h"
-#include "core/Error.h"
-#include "core/MediaPlayer.h"
-#include "widgets/WidgetVolumeSlider.h"
+#include "VLCQtCore/Audio.h"
+#include "VLCQtCore/Error.h"
+#include "VLCQtCore/MediaPlayer.h"
+
+#include "VLCQtWidgets/WidgetVolumeSlider.h"
 
 VlcWidgetVolumeSlider::VlcWidgetVolumeSlider(VlcMediaPlayer *player,
                                              QWidget *parent)

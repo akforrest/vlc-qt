@@ -18,9 +18,9 @@
 
 #include <vlc/vlc.h>
 
-#include "core/Error.h"
-#include "core/MediaPlayer.h"
-#include "core/Video.h"
+#include "VLCQtCore/Error.h"
+#include "VLCQtCore/MediaPlayer.h"
+#include "VLCQtCore/Video.h"
 
 VlcVideo::VlcVideo(VlcMediaPlayer *player)
     : QObject(player),

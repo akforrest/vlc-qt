@@ -1,6 +1,9 @@
 /****************************************************************************
 * VLC-Qt - Qt and libvlc connector library
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+*
+* Based on Phonon multimedia library
+* Copyright (C) 2012 Harald Sitter <sitter@kde.org>
 *
 * This library is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Lesser General Public License as published
@@ -16,33 +19,15 @@
 * along with this library. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
-#include <vlc/vlc.h>
+#include "VLCQtCore/VideoFrame.h"
 
-#include "core/Error.h"
-
-QString VlcError::errmsg()
+VlcVideoFrame::VlcVideoFrame()
+    : inited(false), width(0), height(0)
 {
-    QString error;
-    if(libvlc_errmsg()) {
-        error = QString::fromUtf8(libvlc_errmsg());
-        clearerr();
+    for (int i = 0; i < 4; ++i) {
+        pitch[i] = 0;
+        visiblePitch[i] = 0;
+        lines[i] = 0;
+        visibleLines[i] = 0;
     }
-
-    return error;
-}
-
-void VlcError::showErrmsg()
-{
-	// Outputs libvlc error message if there is any
-    QString error = errmsg();
-    if(!error.isEmpty()) {
-        qDebug() << "libvlc" << "Error:" << error;
-	}
-}
-
-void VlcError::clearerr()
-{
-	// Clears libvlc error message
-	libvlc_clearerr();
 }

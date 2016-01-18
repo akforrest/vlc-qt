@@ -6,7 +6,7 @@
 
 VLC_QT_TARGET_LIB = widgets
 
-TARGET = VLCQtWidgets
+LIBNAME = VLCQtWidgets
 
 HEADERS +=  ControlAudio.h \
             ControlVideo.h \
@@ -31,4 +31,10 @@ SOURCES +=  ControlAudio.cpp \
             WidgetVideo.cpp \
             WidgetVolumeSlider.cpp
 
-LIBS += -lVLCQtCore
+VLC_QT_CORE_LIB = VLCQtCore
+win32 {
+    CONFIG(debug, debug|release) {
+        VLC_QT_CORE_LIB = $${VLC_QT_CORE_LIB}d
+    }
+}
+LIBS += -l$${VLC_QT_CORE_LIB}

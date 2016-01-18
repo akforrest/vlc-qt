@@ -24,11 +24,11 @@
     #include <QtGui/QAction>
 #endif
 
-#include "core/Error.h"
-#include "core/MediaPlayer.h"
-#include "core/Video.h"
+#include "VLCQtCore/Error.h"
+#include "VLCQtCore/MediaPlayer.h"
+#include "VLCQtCore/Video.h"
 
-#include "widgets/ControlVideo.h"
+#include "VLCQtWidgets/ControlVideo.h"
 
 VlcControlVideo::VlcControlVideo(VlcMediaPlayer *player,
                                  const QString &language,
