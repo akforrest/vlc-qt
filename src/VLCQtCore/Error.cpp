@@ -26,7 +26,9 @@ QString VlcError::errmsg()
     QString error;
     if(libvlc_errmsg()) {
         error = QString::fromUtf8(libvlc_errmsg());
+#ifndef Q_OS_ANDROID
         clearerr();
+#endif
     }
 
     return error;
@@ -40,9 +42,10 @@ void VlcError::showErrmsg()
         qWarning() << "libvlc" << "Error:" << error;
 	}
 }
-
+#ifndef Q_OS_ANDROID
 void VlcError::clearerr()
 {
 	// Clears libvlc error message
 	libvlc_clearerr();
 }
+#endif

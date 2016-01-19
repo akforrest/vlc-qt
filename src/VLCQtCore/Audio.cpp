@@ -77,14 +77,18 @@ VlcAudio::VlcAudio(VlcMediaPlayer *player)
     : QObject(player),
       _vlcMediaPlayer(player->core())
 {
+#ifndef Q_OS_ANDROID
     var_AddCallback((vlc_object_t *)_vlcMediaPlayer, "volume", VlcAudioCallbackHelper::volumeCallback, this);
     var_AddCallback((vlc_object_t *)_vlcMediaPlayer, "mute", VlcAudioCallbackHelper::muteCallback, this);
+#endif
 }
 
 VlcAudio::~VlcAudio()
 {
+#ifndef Q_OS_ANDROID
     var_DelCallback((vlc_object_t *)_vlcMediaPlayer, "volume", VlcAudioCallbackHelper::volumeCallback, this);
     var_DelCallback((vlc_object_t *)_vlcMediaPlayer, "mute", VlcAudioCallbackHelper::muteCallback, this);
+#endif
 }
 
 bool VlcAudio::getMute() const

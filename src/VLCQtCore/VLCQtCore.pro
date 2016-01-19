@@ -8,6 +8,8 @@ VLC_QT_TARGET_LIB = core
 
 LIBNAME = VLCQtCore
 
+DEFINES += VLCQT_CORE_LIBRARY
+
 HEADERS +=  Audio.h \
             Common.h \
             Enums.h \
@@ -16,7 +18,6 @@ HEADERS +=  Audio.h \
             Instance.h \
             Media.h \
             MediaList.h \
-            MediaListPlayer.h \
             MediaPlayer.h \
             MetaManager.h \
             ModuleDescription.h \
@@ -27,12 +28,6 @@ HEADERS +=  Audio.h \
             VideoFrame.h \
             VideoMemoryStream.h
 
-! include( ../../common.pri ) {
-    error( "Couldn't find the common.pri file!" )
-}
-
-DEFINES += VLCQT_CORE_LIBRARY
-
 SOURCES +=  Audio.cpp \
             Common.cpp \
             Enums.cpp \
@@ -41,11 +36,19 @@ SOURCES +=  Audio.cpp \
             Instance.cpp \
             Media.cpp \
             MediaList.cpp \
-            MediaListPlayer.cpp \
             MediaPlayer.cpp \
             MetaManager.cpp \
             ModuleDescription.cpp \
             Video.cpp \
             VideoMemoryStream.cpp \
             VideoFrame.cpp
+
+!android {
+    HEADERS += MediaListPlayer.h
+    SOURCES += MediaListPlayer.cpp
+}
+
+! include( ../../common.pri ) {
+    error( "Couldn't find the common.pri file!" )
+}
 

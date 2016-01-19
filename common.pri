@@ -14,6 +14,9 @@ DEFINES += LIBVLCQT_VERSION_QML_MINOR=0
 DEFINES += LIBVLC_VERSION=0x020200
 
 TEMPLATE = lib
+android {
+    CONFIG += staticlib
+}
 
 VLC_QT_ROOT = $$PWD
 
@@ -24,7 +27,15 @@ else {
     BUILD_MODE = release
 }
 
-DESTDIR = $$PWD/../vlc-qt-build
+VLC_SDK = sdk
+TARGET_OS = win
+
+android {
+    VLC_SDK = sdk_android
+    TARGET_OS = android
+}
+
+DESTDIR = $$PWD/../vlc-qt-build/$${TARGET_OS}
 LIBS += -L$${DESTDIR}
 
 INCLUDEPATH += $${VLC_QT_ROOT}/src
@@ -34,12 +45,20 @@ RCC_DIR = $${VLC_QT_ROOT}/_generated/$${VLC_QT_TARGET_LIB}/$${BUILD_MODE}/rc
 OBJECTS_DIR = $${VLC_QT_ROOT}/_generated/$${VLC_QT_TARGET_LIB}/$${BUILD_MODE}/obj
 
 # VLC
-VLC_ROOT_PATH = C:/dev/vlc-2.2.1-win32/vlc-2.2.1
+VLC_ROOT_PATH = C:/dev/vlc-2.2.1
 
-INCLUDEPATH += $${VLC_ROOT_PATH}/sdk/include
-INCLUDEPATH += $${VLC_ROOT_PATH}/sdk/include/vlc/plugins
-LIBS += -L$${VLC_ROOT_PATH}
-LIBS += -llibvlc -llibvlccore
+INCLUDEPATH += $${VLC_ROOT_PATH}/$${VLC_SDK}/include
+INCLUDEPATH += $${VLC_ROOT_PATH}/$${VLC_SDK}/include/vlc/plugins
+
+android {
+    DEFINES += __MINGW32__
+
+    LIBS += $${VLC_ROOT_PATH}/android_so/libvlcjni.so
+}
+else {
+    LIBS += -L$${VLC_ROOT_PATH}
+    LIBS += -llibvlc -llibvlccore
+}
 
 TARGET = $${LIBNAME}
 win32 {

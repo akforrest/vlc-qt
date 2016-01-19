@@ -238,15 +238,15 @@ public:
         \brief Video outputs list
     */
     enum VideoOutput {
-#if defined(Q_OS_LINUX)
+//#if defined(Q_OS_LINUX)
         X11,
         XVideo,
         GLX,
-#elif defined(Q_OS_WIN32)
+//#elif defined(Q_OS_WIN32)
         DirectX,
         Direct3D,
         OpenGL,
-#endif
+//#endif
         DefaultVout
     };
 

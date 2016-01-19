@@ -53,7 +53,9 @@ public:
 
 		This is optional. By default, the error status is automatically overriden when a new error occurs, and destroyed when the thread exits.
 	*/
+#ifndef Q_OS_ANDROID
 	static void clearerr();
+#endif
 };
 
 #endif // VLCQT_ERROR_H_

@@ -21,3 +21,4 @@ examples/demo-player/src/moc_*
 examples/demo-player/src/ui_*
 
 _generated/
+vlc-qt.pro.user.win
